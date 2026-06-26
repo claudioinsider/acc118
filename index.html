@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATTUAL Comércio e Serviços – Brasília DF</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;600&family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--yellow:#f5c400;--black:#0a0a0a;--white:#f0ede8;--grey:#1e1e1e;--mid:#333;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;width:100%;z-index:100;background:var(--black);border-bottom:2px solid var(--yellow);display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--yellow);letter-spacing:0.1em;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--white);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--yellow);}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;}
+.hero-left{padding:6rem 3rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:2px solid var(--mid);}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;margin-bottom:1.5rem;}
+.hero-left h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,7rem);line-height:0.95;color:var(--white);margin-bottom:2rem;}
+.hero-left h1 span{color:var(--yellow);}
+.hero-left p{font-size:1rem;color:#888;line-height:1.8;max-width:380px;margin-bottom:2.5rem;font-weight:300;}
+.btn-primary{display:inline-block;background:var(--yellow);color:var(--black);padding:0.9rem 2.5rem;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;text-decoration:none;transition:all 0.2s;}
+.btn-primary:hover{background:var(--white);}
+.btn-secondary{display:inline-block;border:1px solid var(--white);color:var(--white);padding:0.9rem 2.5rem;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;text-decoration:none;margin-left:1rem;transition:all 0.2s;}
+.btn-secondary:hover{background:var(--white);color:var(--black);}
+.hero-right{background:var(--grey);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:100%;height:100%;}
+.grid-cell{padding:2.5rem;border:1px solid var(--mid);display:flex;flex-direction:column;justify-content:flex-end;}
+.grid-cell .num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--yellow);line-height:1;}
+.grid-cell .lbl{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;color:#666;text-transform:uppercase;margin-top:0.3rem;}
+.grid-cell.highlight{background:var(--yellow);}
+.grid-cell.highlight .num{color:var(--black);}
+.grid-cell.highlight .lbl{color:var(--black);}
+.ticker{background:var(--yellow);padding:0.5rem 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:ticker 20s linear infinite;}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker span{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.15em;color:var(--black);padding:0 3rem;}
+.services{padding:5rem 3rem;background:var(--black);}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;margin-bottom:1rem;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--white);margin-bottom:3rem;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.service-card{background:var(--grey);padding:2.5rem;border-left:3px solid transparent;transition:all 0.3s;cursor:default;}
+.service-card:hover{border-left-color:var(--yellow);background:#252525;}
+.service-icon{font-size:2rem;margin-bottom:1.5rem;display:block;}
+.service-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;letter-spacing:0.05em;}
+.service-card p{font-size:0.88rem;color:#777;line-height:1.7;font-weight:300;}
+.about{display:grid;grid-template-columns:1fr 1fr;background:var(--grey);}
+.about-left{padding:5rem 3rem;border-right:2px solid var(--mid);}
+.about-left h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--white);margin-bottom:1.5rem;}
+.about-left p{color:#888;font-size:0.95rem;line-height:1.8;font-weight:300;margin-bottom:1rem;}
+.about-right{padding:5rem 3rem;}
+.data-row{border-bottom:1px solid var(--mid);padding:1rem 0;display:flex;justify-content:space-between;align-items:center;}
+.data-row:last-child{border-bottom:none;}
+.data-key{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;color:#666;text-transform:uppercase;}
+.data-val{font-size:0.9rem;color:var(--white);font-weight:400;text-align:right;}
+.status-active{background:var(--yellow);color:var(--black);padding:0.2rem 0.7rem;font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.08em;}
+.contact{padding:5rem 3rem;background:var(--black);border-top:2px solid var(--yellow);}
+.contact h2{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--white);margin-bottom:3rem;}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.contact-item{background:var(--grey);padding:2rem;}
+.contact-item .ci-type{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:#666;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem;}
+.contact-item .ci-val{font-size:0.95rem;color:var(--white);}
+footer{background:var(--yellow);padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;color:var(--black);}
+footer a{color:var(--black);opacity:0.6;text-decoration:none;}
+footer a:hover{opacity:1;}
+@media(max-width:900px){.hero,.about{grid-template-columns:1fr;}.hero-right{height:300px;}.services-grid,.contact-grid{grid-template-columns:1fr;}nav{padding:1rem 1.5rem;}.nav-links{display:none;}.hero-left,.about-left,.about-right{padding:3rem 1.5rem;}.services,.contact{padding:3rem 1.5rem;}footer{flex-direction:column;gap:0.5rem;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">ATTUAL</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+<section id="inicio" class="hero">
+  <div class="hero-left">
+    <div class="tag">// Guará II – Brasília · DF</div>
+    <h1>CONSTRUÇÃO<br>COM <span>PRECISÃO</span></h1>
+    <p>Comércio varejista de materiais de construção, estruturas metálicas, esquadrias e serviços de acabamento. Do projeto ao acabamento final.</p>
+    <div>
+      <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
+      <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-grid">
+      <div class="grid-cell"><div class="num">2022</div><div class="lbl">Fundação</div></div>
+      <div class="grid-cell highlight"><div class="num">+30</div><div class="lbl">Atividades</div></div>
+      <div class="grid-cell"><div class="num">ME</div><div class="lbl">Porte</div></div>
+      <div class="grid-cell"><div class="num">DF</div><div class="lbl">Brasília</div></div>
+    </div>
+  </div>
+</section>
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>MATERIAIS DE CONSTRUÇÃO</span><span>ESTRUTURAS METÁLICAS</span><span>ESQUADRIAS</span><span>SERRALHERIA</span><span>MÓVEIS</span><span>INSTALAÇÕES ELÉTRICAS</span><span>IMPERMEABILIZAÇÃO</span><span>OBRAS CIVIS</span>
+    <span>MATERIAIS DE CONSTRUÇÃO</span><span>ESTRUTURAS METÁLICAS</span><span>ESQUADRIAS</span><span>SERRALHERIA</span><span>MÓVEIS</span><span>INSTALAÇÕES ELÉTRICAS</span><span>IMPERMEABILIZAÇÃO</span><span>OBRAS CIVIS</span>
+  </div>
+</div>
+<section id="servicos" class="services">
+  <div class="section-label">// O que fazemos</div>
+  <div class="section-title">NOSSOS SERVIÇOS</div>
+  <div class="services-grid">
+    <div class="service-card"><span class="service-icon">🏗️</span><h3>Construção Civil</h3><p>Construção de edifícios, obras de alvenaria, fundações e instalações esportivas e recreativas.</p></div>
+    <div class="service-card"><span class="service-icon">⚙️</span><h3>Estruturas Metálicas</h3><p>Fabricação e montagem de estruturas metálicas, esquadrias de metal e artigos de serralheria.</p></div>
+    <div class="service-card"><span class="service-icon">🔌</span><h3>Instalações</h3><p>Instalação e manutenção elétrica, sistemas hidráulicos, sanitários, gás e ar condicionado.</p></div>
+    <div class="service-card"><span class="service-icon">🪟</span><h3>Acabamentos</h3><p>Impermeabilização, pintura de edifícios, instalação de portas, janelas, tetos, divisórias e armários.</p></div>
+    <div class="service-card"><span class="service-icon">🧱</span><h3>Materiais</h3><p>Comércio varejista de materiais de construção, tintas, material elétrico, ferragens e vidros.</p></div>
+    <div class="service-card"><span class="service-icon">🛠️</span><h3>Reparos</h3><p>Manutenção de redes de distribuição de energia elétrica e redes de abastecimento de água.</p></div>
+  </div>
+</section>
+<section id="sobre" class="about">
+  <div class="about-left">
+    <h2>SOBRE A ATTUAL</h2>
+    <p>Fundada em outubro de 2022, a ATTUAL Comércio e Serviços Ltda consolidou-se como referência no setor de construção civil e materiais correlatos em Brasília – DF.</p>
+    <p>Com ampla gama de atividades econômicas, entregamos soluções completas para construtoras, arquitetos e clientes finais que buscam qualidade e eficiência em cada etapa da obra.</p>
+    <p>CNPJ ativo desde a fundação, com rigorosa conformidade fiscal e operacional.</p>
+  </div>
+  <div class="about-right">
+    <div class="data-row"><span class="data-key">Razão Social</span><span class="data-val">ATTUAL COMERCIO E SERVICOS LTDA</span></div>
+    <div class="data-row"><span class="data-key">CNPJ</span><span class="data-val">48.316.755/0001-26</span></div>
+    <div class="data-row"><span class="data-key">Abertura</span><span class="data-val">17/10/2022</span></div>
+    <div class="data-row"><span class="data-key">Situação</span><span class="data-val"><span class="status-active">ATIVA</span></span></div>
+    <div class="data-row"><span class="data-key">Endereço</span><span class="data-val">Q QE 34 Bloco B, 07 – Loja</span></div>
+    <div class="data-row"><span class="data-key">Bairro</span><span class="data-val">Guará II – Brasília/DF</span></div>
+    <div class="data-row"><span class="data-key">CEP</span><span class="data-val">71.065-622</span></div>
+    <div class="data-row"><span class="data-key">Telefone</span><span class="data-val">(61) 8404-2500</span></div>
+  </div>
+</section>
+<section id="contato" class="contact">
+  <h2>FALE CONOSCO</h2>
+  <div class="contact-grid">
+    <div class="contact-item"><div class="ci-type">Telefone</div><div class="ci-val">(61) 8404-2500</div></div>
+    <div class="contact-item"><div class="ci-type">E-mail</div><div class="ci-val">ATTUAL.EHD@GMAIL.COM</div></div>
+    <div class="contact-item"><div class="ci-type">Endereço</div><div class="ci-val">Q QE 34 Bloco B, 07 – Guará II, Brasília/DF</div></div>
+  </div>
+</section>
+<footer>
+  <p>CNPJ: 48.316.755/0001-26 · ATTUAL COMERCIO E SERVICOS LTDA · © 2026</p>
+  <p><a href="/privacy">Política de Privacidade</a></p>
+</footer>
+</body>
+</html>
